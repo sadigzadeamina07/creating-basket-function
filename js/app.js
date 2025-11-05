@@ -1,5 +1,7 @@
 let container = document.getElementById('container')
 let basket = []
+let cartcount= document.getElementById('cartcount');
+
 function datanimaple(oturulendeyer) {
     container.innerHTML='';
   oturulendeyer.map((items) => {
@@ -14,7 +16,7 @@ function datanimaple(oturulendeyer) {
                 <span class="mt-3 text-gray-500 line-clamp-2">${items.description}</span>
                <div class="flex justify-between  flex-wrap  mt-6">
                <h2 class="font-bold text-3xl ">$ ${items.price}</h2>
-<button class="bg-blue-700 flex gap-3 items-center text-white px-4  py-2 rounded"> <i class="fa-regular fa-cart-shopping"></i>Əlavə et</button>
+<button onclick="addbasket('${items.id}')" class="bg-blue-700 flex gap-3 items-center text-white px-4  py-2 rounded"> <i class="fa-regular fa-cart-shopping"></i>Əlavə et</button>
                </div>
                     </div>
         </div>`
@@ -26,4 +28,13 @@ function filtirmleme(yenifiltr){
 
 let filterlenmis=yenifiltr ? data.filter(f => f.category===yenifiltr ) :data;
 datanimaple(filterlenmis)
+}
+function addbasket (id) {
+let basketall = data.find(item=>item.id == id);
+
+if(basketall && !basket.some(item=>item.id === basketall.id)) {
+basket.push(basketall);
+}
+cartcount.innerHTML=basket.length
+
 }
