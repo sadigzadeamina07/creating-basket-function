@@ -36,8 +36,8 @@ function addbasket(id) {
         inBasket ? inBasket.quantity++ : basket.push({ ...product, quantity: 1 });
 
     }
-    Cartcount()
     sebetgoster()
+    Cartcount()
 
 }
 
@@ -74,7 +74,7 @@ function sebetgoster() {
                         `).join('')
             : '<p class="text-gray-500 text-center mt-10">Səbət boşdur</p>'}
                 </div>
-                <div class="flex flex-col justify-end h-[100vh] " >
+                <div class="flex flex-col justify-end h-[90vh] " >
                      <div class="flex justify-between items-center mx-9">
                     <p class="text-xl">Total</p>
                     <h2 class="font-bold text-xl flex items-start">$ ${totalprice.toFixed(2)}</h2>
@@ -102,12 +102,12 @@ function show(id, quant) {
         }
 
     }
-    Cartcount()
     sebetgoster()
+    Cartcount()
 }
 function sil(id) {
     basket = basket.filter(item => item.id != id)
-    Cartcount()
     sebetgoster()
+    Cartcount()
 }
 datanimaple(data)
