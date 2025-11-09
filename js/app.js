@@ -49,7 +49,7 @@ function Cartcount() {
 function sebetgoster() {
     let totalprice = basket.reduce((sum, item) => (item.price + sum) * item.quantity, 0)
     cart.innerHTML = `
-            <div class="h-full flex flex-col">
+            <div class="h-full flex flex-col justify-between">
             <div>
                             <i onclick="bagla()" class="fa-solid fa-xmark text-2xl cursor-pointer p-4 block text-right"></i>
             </div>
@@ -72,9 +72,9 @@ function sebetgoster() {
         </div>
         </div>
                         `).join('')
-            : '<p class="text-gray-500 text-center mt-10">Səbət boşdur</p>'}
+            : '<p class="text-gray-500 text-center mt-10 text-2xl">Səbət boşdur</p>'}
                 </div>
-                <div class="flex flex-col justify-end h-[90vh] " >
+                <div class="flex flex-col justify-end " >
                      <div class="flex justify-between items-center mx-9">
                     <p class="text-xl">Total</p>
                     <h2 class="font-bold text-xl flex items-start">$ ${totalprice.toFixed(2)}</h2>
