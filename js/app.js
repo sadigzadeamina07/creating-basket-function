@@ -51,7 +51,7 @@ function sebetgoster() {
     cart.innerHTML = `
             <div class="h-full flex flex-col justify-between">
             <div>
-                            <i onclick="bagla()" class="fa-solid fa-xmark text-2xl cursor-pointer p-4 block text-right"></i>
+                            <i onclick="bagla()" class="fa-solid fa-xmark text-2xl cursor-pointer p-2 block text-right"></i>
             </div>
 
                 <div class="p-4 flex  flex-col gap-4">
