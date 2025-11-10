@@ -37,7 +37,6 @@ function addbasket(id) {
 
     }
     Cartcount()
-
 }
 
 function Cartcount() {
@@ -46,7 +45,7 @@ function Cartcount() {
 }
 
 function sebetgoster() {
-    let totalprice = basket.reduce((sum, item) => (item.price + sum) * item.quantity, 0)
+    let totalprice = basket.reduce((sum, item) => sum+ item.price * item.quantity, 0)
     cart.innerHTML = `
             <div class="h-full flex flex-col justify-between">
             <div>
