@@ -36,7 +36,6 @@ function addbasket(id) {
         inBasket ? inBasket.quantity++ : basket.push({ ...product, quantity: 1 });
 
     }
-    sebetgoster()
     Cartcount()
 
 }
