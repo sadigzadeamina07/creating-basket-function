@@ -41,7 +41,7 @@ if (inBasket) {
 
     }
     Cartcount()
-   if (cart.style.right === '0px' || cart.style.right === '0') {
+   if (cart.style.right === '0px' ) {
     sebetgoster();
   }
 }
