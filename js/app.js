@@ -41,7 +41,7 @@ if (inBasket) {
 
     }
     Cartcount()
-   if (cart.style.right === '0px' ) {
+   if (cart.style.right === '0px'|| cart.style.right === '0' ) {
     sebetgoster();
   }
 }
@@ -52,7 +52,7 @@ function Cartcount() {
 }
 
 function sebetgoster() {
-    let totalprice = basket.reduce((sum, item) => sum+ item.price * item.quantity, 0)
+    let totalprice = basket.reduce((sum, item) => sum + item.price * item.quantity, 0)
     cart.innerHTML = `
             <div class="h-full flex flex-col justify-between">
             <div>
