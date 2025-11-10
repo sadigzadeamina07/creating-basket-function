@@ -22,8 +22,6 @@ function datanimaple(oturulendeyer) {
         </div>`
     })
 }
-
-
 function filtirmleme(yenifiltr) {
 
     let filterlenmis = yenifiltr ? data.filter(f => f.category === yenifiltr) : data;
@@ -33,24 +31,21 @@ function addbasket(id) {
     let product = data.find(item => item.id === id);
     if (product) {
         let inBasket = basket.find(i => i.id === id)
-if (inBasket) {
-  inBasket.quantity++
-} else {
-  basket.push({ ...product, quantity: 1 })
-}
-
+        if (inBasket) {
+            inBasket.quantity++
+        } else {
+            basket.push({ ...product, quantity: 1 })
+        }
     }
     Cartcount()
-   if (cart.style.right === '0px'|| cart.style.right === '0' ) {
-    sebetgoster();
-  }
+    if (cart.style.right === '0px' || cart.style.right === '0') {
+        sebetgoster();
+    }
 }
-
 function Cartcount() {
     let cartcount = document.getElementById('cartcount')
     cartcount.innerHTML = basket.length
 }
-
 function sebetgoster() {
     let totalprice = basket.reduce((sum, item) => sum + item.price * item.quantity, 0)
     cart.innerHTML = `
@@ -58,24 +53,24 @@ function sebetgoster() {
             <div>
                             <i onclick="bagla()" class="fa-solid fa-xmark text-2xl cursor-pointer p-2 block text-right"></i>
             </div>
-
                 <div class="p-4 flex  flex-col gap-4">
                     ${basket.length > 0
             ? basket.map(item => `
                             <div class="flex items-center mb-3 border-b pb-2">
                                 <img src="${item.image}" alt="${item.title}" class="w-[140px] h-[200px] object-contain">
-                                <div class="px-2 flex flex-col gap-4">
-                                 <p class="text-sm font-semibold ">${item.title}</p>
-                                    <p class="text-gray-500">$${(item.price * item.quantity).toFixed(2)}</p>
+                                    <div class="px-2 flex flex-col gap-4">
+                                         <p class="text-sm font-semibold ">${item.title}</p>
+                                          <p class="text-gray-500">$${(item.price * item.quantity).toFixed(2)}</p>
                                     <div class="flex items-center gap-2">
-    <button onclick="show(${item.id}, -1)" class="border px-2 rounded">-</button>
-    <span>${item.quantity}</span>
-    <button onclick="show(${item.id}, +1)" class="border px-2 rounded">+</button>
-    <button onclick="sil(${item.id})" class="text-red-500 ml-2">
-                                     <i onclick="sil()" class="fa-solid fa-trash flex justify-center items-center text-red-400 "></i>
-    </button> </div>
-        </div>
-        </div>
+                                         <button onclick="show(${item.id}, -1)" class="border px-2 rounded">-</button>
+                                            <span>${item.quantity}</span>
+                                         <button onclick="show(${item.id}, +1)" class="border px-2 rounded">+</button>
+                                         <button onclick="sil(${item.id})" class="text-red-500 ml-2">
+                                        <i onclick="sil()" class="fa-solid fa-trash flex justify-center items-center text-red-400 "></i>
+                                    </button>
+                                    </div>
+                            </div>
+             </div>
                         `).join('')
             : '<p class="text-gray-500 text-center mt-10 text-2xl">Səbət boşdur</p>'}
                 </div>
@@ -88,13 +83,11 @@ function sebetgoster() {
                     Complete your order
                 </button>
                 </div>
-           
             </div>
         `;
     cart.style.right = '0';
 
 }
-
 function bagla() {
     cart.style.right = '-100%';
 }
