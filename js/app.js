@@ -33,10 +33,17 @@ function addbasket(id) {
     let product = data.find(item => item.id === id);
     if (product) {
         let inBasket = basket.find(i => i.id === id)
-        inBasket ? inBasket.quantity++ : basket.push({ ...product, quantity: 1 });
+if (inBasket) {
+  inBasket.quantity++
+} else {
+  basket.push({ ...product, quantity: 1 })
+}
 
     }
     Cartcount()
+   if (cart.style.right === '0px' || cart.style.right === '0') {
+    sebetgoster();
+  }
 }
 
 function Cartcount() {
