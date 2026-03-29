@@ -17,7 +17,7 @@ function datanimaple(oturulendeyer) {
                 <span class="mt-3 text-gray-500 line-clamp-2">${items.description}</span>
                <div class="flex justify-between  flex-wrap  mt-6">
                <h2 class="font-bold text-3xl ">$ ${items.price}</h2>
-<button onclick="addbasket(${items.id})" class="bg-blue-700 flex gap-3 items-center text-white px-4  py-2 rounded"> <i class="fa-regular fa-cart-shopping"></i>Əlavə et</button>
+<button onclick="addbasket(${items.id})" class="bg-blue-700 flex gap-3 items-center text-white px-4  py-2 rounded"> <i class="fa-solid fa-cart-shopping"></i>Əlavə et</button>
                </div>
                   <button onclick="dahaetrafli(${items.id})" class="w-full  my-2 p-1  bg-gray-200 text-lg rounded">Daha ətraflı</button>
                     </div>
@@ -111,10 +111,10 @@ function sil(id) {
     sebetgoster()
     Cartcount()
 }
-function dahaetrafli(id){
-  let tap=data.find(item=> id==item.id)
-  let cart2 = document.getElementById('cart2')
-cart2.innerHTML=`
+function dahaetrafli(id) {
+    let tap = data.find(item => id == item.id)
+    let cart2 = document.getElementById('cart2')
+    cart2.innerHTML = `
    <div class="fixed top-0 left-0  w-full h-full flex flex-col justify-center items-center z-[2000] bg-black/50 p-4">
 <div class="bg-white  w-full px-2 max-w-[430px] overflow-y-auto">
 <div class="flex justify-end px-3 ">
@@ -142,5 +142,5 @@ cart2.innerHTML=`
         </div>
 `
 }
-function bagla2(){document.getElementById("cart2").innerHTML=""}
+function bagla2() { document.getElementById("cart2").innerHTML = "" }
 datanimaple(data)
